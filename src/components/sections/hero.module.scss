@@ -1,0 +1,12 @@
+@use "../../styles/variables";
+
+.name {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 70px);
+}
+
+.description {
+  margin: 20px 0 0;
+  font-size: clamp(40px, 8vw, 70px);
+  color: var(--main-accent-color);
+}

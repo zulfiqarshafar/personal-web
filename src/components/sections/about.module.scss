@@ -1,0 +1,50 @@
+.content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+
+  p {
+    color: var(--secondary-color);
+
+    &:first-of-type {
+      text-indent: 2em;
+    }
+  }
+
+  .description {
+    text-align: justify;
+  }
+}
+
+.skillList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 200px));
+  gap: 0 10px;
+  padding: 0 20px;
+  list-style: circle;
+
+  li {
+    position: relative;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  max-width: 300px;
+
+  .imageWrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 65px -10px var(--item-shadow-background);
+
+    img {
+      display: block;
+      max-width: 300px;
+    }
+  }
+}

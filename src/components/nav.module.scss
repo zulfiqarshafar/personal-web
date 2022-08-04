@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  width: 100%;
+  padding: 0 160px;
+  margin: 0;
+  list-style: none;
+
+  li {
+    margin: 0 10px;
+
+    a {
+      color: var(--primary-color);
+      padding: 10px;
+      transition: 0.4s;
+
+      &:hover {
+        color: var(--main-accent-color);
+      }
+    }
+  }
+}

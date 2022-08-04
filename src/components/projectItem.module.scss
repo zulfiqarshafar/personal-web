@@ -1,0 +1,62 @@
+@use "../styles/variables";
+
+.project {
+  display: flex;
+  padding: 25px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  background-color: var(--item-background);
+  box-shadow: 0 0px 55px -10px var(--item-shadow-background);
+
+  .imageContainer {
+    .imageWrapper {
+      margin-right: 20px;
+      width: 350px;
+    }
+    .imageNavContainer {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .description {
+      text-align: justify;
+    }
+
+    .projectTechs {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      padding: 0;
+      list-style: none;
+
+      li {
+        border: 1px solid var(--primary-color);
+        border-radius: 15px;
+        padding: 6px 9px;
+        margin: 0 15px 10px 0;
+        font-size: 13px;
+      }
+    }
+
+    .projectLinks {
+      display: flex;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 15px;
+        color: red;
+
+        &:hover {
+          background-color: rgba(68, 159, 216, 0.2);
+        }
+      }
+    }
+  }
+}
