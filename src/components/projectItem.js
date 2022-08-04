@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import * as styles from "./projectItem.module.scss";
 import iconGithub from "../images/icons/github-48.png";
 import iconLink from "../images/icons/external-link-48.png";
+import iconMultiple from "../images/icons/stack-50.png";
 
-const ProjectItem = ({ project }) => {
-  const [currentImg, setCurrentImg] = useState(project.imgUrlList[0]);
-
+const ProjectItem = ({ project, handleClickImg }) => {
   return (
     <div className={styles.project}>
       {project.imgUrlList.length > 0 && (
         <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
-            <img src={currentImg} alt={project.imgAlt} width="100%" />
-          </div>
-          {/* <div className={styles.imageNavContainer}>Bullets</div> */}
+          <button
+            className={styles.imageWrapper}
+            onClick={() => handleClickImg(project.imgUrlList)}
+            onKeyUp={() => handleClickImg(project.imgUrlList)}
+          >
+            {project.imgUrlList.length > 1 && (
+              <span className={styles.imageList}>
+                {project.imgUrlList.length}
+                <img src={iconMultiple} alt="Multiple icon" width="20px" />
+              </span>
+            )}
+
+            <img
+              src={project.imgUrlList[0]}
+              alt={project.imgAlt}
+              width="450px"
+            />
+          </button>
         </div>
       )}
       <div className={styles.content}>
