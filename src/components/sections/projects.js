@@ -8,7 +8,7 @@ import imgBlog5 from "../../images/projects/blog-5.png";
 import imgArtGallery from "../../images/projects/art-gallery.png";
 import imgPersonalWeb from "../../images/projects/web.png";
 import * as styles from "./projects.module.scss";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
   const data = [
@@ -99,20 +99,22 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <motion.h2
-        className="section-heading"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.6,
-          },
-        }}
-        viewport={{ once: true, margin: "-190px" }}
-      >
-        Some Projects I Have Worked On
-      </motion.h2>
+      <LazyMotion features={domAnimation}>
+        <m.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.6,
+            },
+          }}
+          viewport={{ once: true, margin: "-170px" }}
+        >
+          Some Projects I Have Worked On
+        </m.h2>
+      </LazyMotion>
       <div className="content">
         {data.map((project, i) => (
           <ProjectItem
@@ -123,41 +125,48 @@ const Projects = () => {
         ))}
       </div>
 
-      {isModalOpen && (
-        <div
-          className={styles.modal}
-          onClick={(event) => {
-            if (event.target.classList.contains(styles.modal)) {
-              document.querySelector("body").style.overflow = "auto";
-              setIsModalOpen(false);
-            }
-          }}
-          aria-hidden="true"
-        >
-          <div className={styles.modalContent}>
-            <div className={styles.imageWrapper}>
-              <img src={currentImg} alt="Modal main" />
-            </div>
+      <AnimatePresence initial={false}>
+        {isModalOpen && (
+          <LazyMotion features={domAnimation}>
+            <m.div
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              className={styles.modal}
+              onClick={(event) => {
+                if (event.target.classList.contains(styles.modal)) {
+                  document.querySelector("body").style.overflow = "auto";
+                  setIsModalOpen(false);
+                }
+              }}
+              aria-hidden="true"
+            >
+              <div className={styles.modalContent}>
+                <div className={styles.imageWrapper}>
+                  <img src={currentImg} alt="Modal main" />
+                </div>
 
-            {currentImgList.length > 1 && (
-              <>
-                <button
-                  className={styles.prevBtn}
-                  onClick={() => handleClickModalNav("prev")}
-                >
-                  &#10094;
-                </button>
-                <button
-                  className={styles.nextBtn}
-                  onClick={() => handleClickModalNav("next")}
-                >
-                  &#10095;
-                </button>
-              </>
-            )}
-          </div>
-        </div>
-      )}
+                {currentImgList.length > 1 && (
+                  <>
+                    <button
+                      className={styles.prevBtn}
+                      onClick={() => handleClickModalNav("prev")}
+                    >
+                      &#10094;
+                    </button>
+                    <button
+                      className={styles.nextBtn}
+                      onClick={() => handleClickModalNav("next")}
+                    >
+                      &#10095;
+                    </button>
+                  </>
+                )}
+              </div>
+            </m.div>
+          </LazyMotion>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
