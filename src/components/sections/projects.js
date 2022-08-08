@@ -14,7 +14,8 @@ const Projects = () => {
   const data = [
     {
       title: "Personal Blog",
-      description: `<p>A simple web app for blogging.</p>`,
+      description: `<p>A singe page web app for blogging with clean design using Material UI.
+        Create blog posts using TinyMCE editor then store it to MongoDB. </p>`,
       techs: [
         "React JS",
         "Create React App",
@@ -29,7 +30,8 @@ const Projects = () => {
     },
     {
       title: "Art Gallery",
-      description: `<p>A simple project to display my painting.</p>`,
+      description: `<p>A simple project to display painting. Created with Framer Motion for the animation and using
+        Firebase to store and fetch data in real time.</p>`,
       techs: ["React JS", "Gatsby", "Firebase"],
       imgUrlList: [imgArtGallery],
       imgAlt: "Art gallery screenshot",
@@ -38,7 +40,9 @@ const Projects = () => {
     },
     {
       title: "Personal Web",
-      description: `<p>Personal Web project is the current web you are looking at. <br />I made this web to show my personal info and some projects that I have worked on.</p>`,
+      description: `<p>Personal Web project is the current web you are looking at. <br />
+        I made this web to show my personal info and some projects that I have worked on.
+        Also using this project to implement some tools that I am currently learning.</p>`,
       techs: ["React JS", "Gatsby", "Sass"],
       imgUrlList: [imgPersonalWeb],
       imgAlt: "Personal web screenshot",
