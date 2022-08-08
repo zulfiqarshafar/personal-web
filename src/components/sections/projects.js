@@ -8,6 +8,7 @@ import imgBlog5 from "../../images/projects/blog-5.png";
 import imgArtGallery from "../../images/projects/art-gallery.png";
 import imgPersonalWeb from "../../images/projects/web.png";
 import * as styles from "./projects.module.scss";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const data = [
@@ -94,7 +95,20 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h2 className="section-heading">Some Projects I Have Worked On</h2>
+      <motion.h2
+        className="section-heading"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.6,
+          },
+        }}
+        viewport={{ once: true, margin: "-190px" }}
+      >
+        Some Projects I Have Worked On
+      </motion.h2>
       <div className="content">
         {data.map((project, i) => (
           <ProjectItem

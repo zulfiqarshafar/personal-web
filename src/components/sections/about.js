@@ -1,10 +1,22 @@
 import React from "react";
 import * as styles from "./about.module.scss";
 import personal from "../../images/personal.jpeg";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about">
+    <motion.section
+      id="about"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.6,
+        },
+      }}
+      viewport={{ once: true, margin: "-190px" }}
+    >
       <h2 className="section-heading">About Me</h2>
       <div className={styles.content}>
         <div className={styles.description}>
@@ -43,7 +55,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

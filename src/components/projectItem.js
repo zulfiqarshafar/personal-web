@@ -3,10 +3,22 @@ import * as styles from "./projectItem.module.scss";
 import iconGithub from "../images/icons/github-48.png";
 import iconLink from "../images/icons/external-link-48.png";
 import iconMultiple from "../images/icons/stack-50.png";
+import { motion } from "framer-motion";
 
 const ProjectItem = ({ project, handleClickImg }) => {
   return (
-    <div className={styles.project}>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.6,
+        },
+      }}
+      viewport={{ once: true, margin: "-190px" }}
+      className={styles.project}
+    >
       {project.imgUrlList.length > 0 && (
         <div className={styles.imageContainer}>
           <button
@@ -57,7 +69,7 @@ const ProjectItem = ({ project, handleClickImg }) => {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
