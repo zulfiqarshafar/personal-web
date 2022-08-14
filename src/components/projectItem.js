@@ -35,9 +35,9 @@ const ProjectItem = ({ project, handleClickImg }) => {
               )}
 
               <img
+                className={styles.imageContent}
                 src={project.imgUrlList[0]}
                 alt={project.imgAlt}
-                width="450px"
               />
             </button>
           </div>

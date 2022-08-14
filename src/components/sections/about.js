@@ -21,23 +21,25 @@ const About = () => {
         <h2 className="section-heading">About Me</h2>
         <div className={styles.content}>
           <div className={styles.description}>
-            <p>
-              I am a Web Developer with over three years of experience and
-              currently focusing on frontend development but also learning some
-              of backend development.
-            </p>
-            <p>
-              Currently I am learning and building a few personal projects using
-              ReactJS, ExpressJS and Sass. While also learning more about new
-              technologies, UI design, and software engineering.
-            </p>
-            <p>
-              I have experience working in a team as a Software Engineer with
-              role including designing interface, developing and maintaining web
-              applications based on user requirements, deploying application to
-              production, and writing technical documentation.
-            </p>
-            <p>Some of my skills including:</p>
+            <div>
+              <p>
+                I am a Web Developer with over three years of experience and
+                currently focusing on frontend development but also learning
+                some of backend development.
+              </p>
+              <p>
+                Currently I am learning and building a few personal projects
+                using ReactJS, ExpressJS and Sass. While also learning more
+                about new technologies, UI design, and software engineering.
+              </p>
+              <p>
+                I have experience working in a team as a Software Engineer with
+                role including designing interface, developing and maintaining
+                web applications based on user requirements, deploying
+                application to production, and writing technical documentation.
+              </p>
+              <p>Some of my skills including:</p>
+            </div>
             <ul className={styles.skillList}>
               <li>JavaScript</li>
               <li>React JS</li>

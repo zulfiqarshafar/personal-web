@@ -40,7 +40,7 @@ const Projects = () => {
     },
     {
       title: "Personal Web",
-      description: `<p>Personal Web project is the current web you are looking at. <br />
+      description: `<p>Personal Web project is the current web you are looking at.
         I made this web to show my personal info and some projects that I have worked on.
         Also using this project to implement some tools that I am currently learning.</p>`,
       techs: ["React JS", "Gatsby", "Sass"],
